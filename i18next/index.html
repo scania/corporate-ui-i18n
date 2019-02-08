@@ -19,7 +19,6 @@
   <script>
 
   // import i18next from 'i18next';
-
   i18next
     .use(i18nextXHRBackend)
     .use(i18nextBrowserLanguageDetector)
@@ -30,7 +29,7 @@
       defaultNS: 'special',
       backend: {
         // load from i18next-gitbook repo
-        loadPath: '../locales/{{lng}}/{{ns}}.json',
+        loadPath: 'https://scania.github.io/corporate-ui-i18n/locales/{{lng}}/{{ns}}.json',
         crossDomain: true
       }
     }, function(err, t) {
@@ -42,6 +41,7 @@
   // just set some content and react to language changes
   // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
   function updateContent() {
+
     document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
     document.getElementById('saveBtn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
     
@@ -96,10 +96,11 @@
       </primary-items>
     </c-main-navigation>
 
-
     <section>
       <div class="container">
         <div style="height: 150px">
+          <h5 id="select_language"></h5>
+          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('sv')">Swedish</button>
           <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('en')">
           English
           </button>
@@ -114,6 +115,7 @@
         </div>
       </div>
     </section>
+
   </c-main-content>
   <c-corporate-footer></c-corporate-footer>
 </body>
