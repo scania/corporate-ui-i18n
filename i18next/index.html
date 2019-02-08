@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://static.scania.com/vendors/components/pure-js/nonJS-browsers/1.0.0/nonJS-browsers.html">
+  </noscript>
+
+  <title>Corporate UI i18next</title>
+  <script src="https://static.scania.com/vendors/components/pure-js/browser-reject/1.0.0/js/browser-reject.js"></script>
+  <script src="https://static.scania.com/vendors/frameworks/jQuery/1.11.3/jquery-1.11.3.min.js"></script> 
+  <script src="https://static.scania.com/build/global/3.5.2/js/corporate-ui.js"></script>
+
+  <script src="https://unpkg.com/i18next/i18next.js"></script>
+  <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>    
+  <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+
+  <script>
+
+  // import i18next from 'i18next';
+
+  i18next
+    .use(i18nextXHRBackend)
+    .use(i18nextBrowserLanguageDetector)
+    .init({
+      fallbackLng: 'en',
+      debug: true,
+      ns: ['special', 'common'],
+      defaultNS: 'special',
+      backend: {
+        // load from i18next-gitbook repo
+        loadPath: '../locales/{{lng}}/{{ns}}.json',
+        crossDomain: true
+      }
+    }, function(err, t) {
+      // init set content
+      updateContent();
+    });
+
+
+  // just set some content and react to language changes
+  // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
+  function updateContent() {
+    document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
+    document.getElementById('saveBtn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
+    
+    document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
+  }
+
+  function changeLng(lng) {
+    i18next.changeLanguage(lng);
+  }
+
+  i18next.on('languageChanged', () => {
+    updateContent();
+  });
+
+  </script>
+
+  <style>
+
+  </style>
+
+</head>
+<body class="scania app" data-env="Dev">
+
+  <c-corporate-header site-name="Corporate UI i18n" site-url="/corporate-ui-i18n/">
+    <nav-item location="/corporate-ui-docs/developer/support.html">Support</nav-item>
+    <nav-item location="https://github.com/scania/corporate-ui-i18n">GitHub</nav-item>
+  </c-corporate-header>
+
+  <c-main-content>
+
+    <c-main-navigation show-search>
+      <primary-items>
+        <nav-item location="/corporate-ui-docs/" class="active">Home</nav-item>
+        <nav-item location="/corporate-ui-docs/styleguide/">Style Guide
+          <sub-navigation caption="Style Guide">
+            <nav-item location="/corporate-ui-docs/logotype/">Logotype</nav-item>
+            <nav-item location="/corporate-ui-docs/icons/">Icons</nav-item>
+            <nav-item location="/corporate-ui-docs/colours/">Colours</nav-item>
+            <nav-item location="/corporate-ui-docs/typography/">Typography</nav-item>
+          </sub-navigation>
+        </nav-item>
+        <nav-item location="/corporate-ui-docs/developer/">Web Applications
+          <sub-navigation caption="Web Applications">
+            <nav-item location="/corporate-ui-docs/developer/">Corporate UI</nav-item>
+            <nav-item location="/corporate-ui-docs/developer/corporate-ui-for-frameworks.html">JS Frameworks</nav-item>
+            <nav-item location="/corporate-ui-docs/developer/bootstrap-original-docs.html">Scania Bootstrap</nav-item>            
+            <nav-item location="/corporate-ui-docs/developer/uiaas.html">UIaaS</nav-item>
+            <nav-item location="/corporate-ui-docs/developer/support.html">Support</nav-item>
+          </sub-navigation>
+        </nav-item>
+        <nav-item location="/corporate-ui-docs/mobile-apps/">Mobile Apps</nav-item>
+      </primary-items>
+    </c-main-navigation>
+
+
+    <section>
+      <div class="container">
+        <div style="height: 150px">
+          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('en')">
+          English
+          </button>
+          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('de')">
+          German
+          </button>
+          <hr />
+          <div id="title"></div>
+          <button class="btn btn-sm btn-success"  id="saveBtn"></button>
+          <hr />
+          <div id="info"></div>
+        </div>
+      </div>
+    </section>
+  </c-main-content>
+  <c-corporate-footer></c-corporate-footer>
+</body>
+
+</html>
