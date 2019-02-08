@@ -42,7 +42,7 @@
   // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
   function updateContent() {
 
-    document.getElementById('select_language').innerHTML = i18next.t('label.select_language', { what: 'i18next' });
+    document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
     document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
     document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
 
