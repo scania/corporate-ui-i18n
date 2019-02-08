@@ -173,14 +173,14 @@
 
     setTimeout(function(){
       document.querySelector(".close").onclick = function() {alert('Once the user click to close the popover, we need to remember not to show it again. Set a cookie.');};
-    }, 3000);
+    }, 5000);
 
     function swapLanguage(language) {
       myRestoreHelpInit.hide();
       i18next.changeLanguage(language);
       setTimeout(function(){
         myRestoreHelpInit.show();
-      }, 500);
+      }, 800);
       
     }
 
