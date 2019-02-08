@@ -42,9 +42,10 @@
   // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
   function updateContent() {
 
+    document.getElementById('select_language').innerHTML = i18next.t('select_language', { what: 'i18next' });
     document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
-    document.getElementById('saveBtn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
-    
+    document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
+
     document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
   }
 
@@ -101,15 +102,10 @@
         <div style="height: 150px">
           <h5 id="select_language"></h5>
           <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('sv')">Swedish</button>
-          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('en')">
-          English
-          </button>
-          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('de')">
-          German
-          </button>
-          <hr />
+          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('en')">English</button>
+          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('de')">German</button>
           <div id="title"></div>
-          <button class="btn btn-sm btn-success"  id="saveBtn"></button>
+          <button class="btn btn-sm btn-success"  id="save-btn"></button>
           <hr />
           <div id="info"></div>
         </div>
