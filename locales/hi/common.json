@@ -8,6 +8,7 @@
 		"fullscreen_title": "फुलस्क्रीन बटन"
 	},
 	"label": {
+		"prototype_header": "यह पूर्ण स्क्रीन सहायता संदेश का एक प्रोटोटाइप है।",
 		"select_language": "भाषा का चयन करें"
 	}
 }

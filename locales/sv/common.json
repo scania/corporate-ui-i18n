@@ -8,6 +8,7 @@
 		"fullscreen_title": "Fullskärmsknapp"
 	},
 	"label": {
+		"prototype_header": "Det här är en prototyp för helskärms hjälpmeddelande.",
 		"select_language": "Välj språk"
 	}
 }

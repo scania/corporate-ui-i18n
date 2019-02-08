@@ -50,7 +50,7 @@
        
 
       <div class="container">
-        <h1>This is just a prototype for Full Screen handling</h1>
+        <h1 id="prototype_header"></h1>
         <h3 id="select_language"></h3>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('sv');">Swedish</button>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('en');">English</button>
@@ -220,6 +220,8 @@ function updateContent() {
 
   document.getElementById('restore-help').setAttribute('data-title',i18next.t('common:help.fullscreen_title', { what: 'i18next' }));
   document.getElementById('restore-help').setAttribute('data-content',i18next.t('common:help.fullscreen_body', { what: 'i18next' }));
+  document.getElementById('prototype_header').innerHTML = i18next.t('common:label.prototype_header', { what: 'i18next' });
+  
   document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
   document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
   document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
