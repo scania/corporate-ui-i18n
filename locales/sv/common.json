@@ -1,7 +1,9 @@
 {
 	"button": {
 		"save": "Spara {{count}} ändring",
-		"save_plural": "Spara {{count}} ändringar",
+		"save_plural": "Spara {{count}} ändringar"
+	},
+	"label": {
 		"select_language": "Välj språk"
 	}
 }

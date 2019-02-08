@@ -1,7 +1,9 @@
 {
 	"button": {
-		"save": "save {{count}} change",
-		"save_plural": "save {{count}} changes",
+		"save": "Save {{count}} change",
+		"save_plural": "Save {{count}} changes"
+	},
+	"label": {
 		"select_language": "Select language"
 	}
 }

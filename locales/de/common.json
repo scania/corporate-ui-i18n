@@ -1,7 +1,9 @@
 {
 	"button": {
 		"save": "Speichere {{count}} änderung",
-		"save_plural": "Speichere {{count}} änderungen",
+		"save_plural": "Speichere {{count}} änderungen"
+	},
+	"label": {
 		"select_language": "Sprache auswählen"
 	}
 }

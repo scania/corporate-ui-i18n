@@ -53,6 +53,11 @@
                                     </translation>
                                 </translations>
                             </concept_node>
+                        </children>
+                    </folder_node>
+                    <folder_node>
+                        <name>label</name>
+                        <children>
                             <concept_node>
                                 <name>select_language</name>
                                 <definition_loaded>false</definition_loaded>
