@@ -52,6 +52,8 @@
         <button class="btn btn-sm btn-default" onclick="swapLanguage('sv');">Swedish</button>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('en');">English</button>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('de');">German</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('hi');">Hindi</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('ru');">Russian</button>        
         <h4 id="title" class="mt-5"></h4>
         <button class="btn btn-sm btn-success" id="save-btn"></button>
         <h5 id="info" class="mt-5"></h5>
@@ -177,8 +179,12 @@
     }, 3000);
 
     function swapLanguage(language) {
+      myRestoreHelpInit.hide();
       i18next.changeLanguage(language);
-      myRestoreHelpInit.update();
+      setTimeout(function(){
+        myRestoreHelpInit.show();
+      }, 300);
+      
     }
 
 </script>
