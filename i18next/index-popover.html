@@ -173,14 +173,14 @@
 
     setTimeout(function(){
       document.querySelector(".close").onclick = function() {alert('Once the user click to close the popover, we need to remember not to show it again. Set a cookie.');};
-    }, 5000);
+    }, 7000);
 
     function swapLanguage(language) {
       myRestoreHelpInit.hide();
       i18next.changeLanguage(language);
       setTimeout(function(){
         myRestoreHelpInit.show();
-      }, 800);
+      }, 500);
       
     }
 
@@ -224,9 +224,6 @@ function updateContent() {
   
   document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
   document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
-  document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
-
-  document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
 }
 
 function changeLng(lng) {
