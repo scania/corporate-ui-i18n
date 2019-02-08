@@ -43,8 +43,8 @@
   // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
   function updateContent() {
 
-    document.getElementById('restore-help').setAttribute('data-title',i18next.t('common:help.fullscreen-title', { what: 'i18next' }));
-    document.getElementById('restore-help').setAttribute('data-content',i18next.t('common:help.fullscreen-body', { what: 'i18next' }));
+    document.getElementById('restore-help').setAttribute('data-title',i18next.t('common:help.fullscreen_title', { what: 'i18next' }));
+    document.getElementById('restore-help').setAttribute('data-content',i18next.t('common:help.fullscreen_body', { what: 'i18next' }));
     document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
     document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
     document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
@@ -64,25 +64,7 @@
 
 
 
-  <script>
 
-      var restoreHelpPopover = document.getElementById('restore-help');
-      var myRestoreHelpInit = restoreHelpPopover.Popover;
-
-      document.querySelector("c-fullscreen").onmouseover = function() {myRestoreHelpInit.hide();};
-
-      setTimeout(function(){
-        myRestoreHelpInit.show();
-        setTimeout(function(){
-          myRestoreHelpInit.hide();
-        }, 8000);
-      }, 1500);
-
-      setTimeout(function(){
-        document.querySelector(".close").onclick = function() {alert('Once the user click to close the popover, we need to remember not to show it again. Set a cookie.');};
-      }, 3000);
-
-</script>
 
 
 </head>
@@ -224,6 +206,28 @@
   }
 
 </style>
+
+
+
+  <script>
+
+      var restoreHelpPopover = document.getElementById('restore-help');
+      var myRestoreHelpInit = restoreHelpPopover.Popover;
+
+      document.querySelector("c-fullscreen").onmouseover = function() {myRestoreHelpInit.hide();};
+
+      setTimeout(function(){
+        myRestoreHelpInit.show();
+        setTimeout(function(){
+          myRestoreHelpInit.hide();
+        }, 8000);
+      }, 1500);
+
+      setTimeout(function(){
+        document.querySelector(".close").onclick = function() {alert('Once the user click to close the popover, we need to remember not to show it again. Set a cookie.');};
+      }, 3000);
+
+</script>
 
 
 </body>
