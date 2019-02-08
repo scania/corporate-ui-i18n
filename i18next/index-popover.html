@@ -11,12 +11,12 @@
   <title>UX Library - UI Guidelines - Corporate UI</title>
   <script src="https://static.scania.com/vendors/components/pure-js/browser-reject/1.0.0/js/browser-reject.js"></script>
   <script src="https://static.scania.com/vendors/frameworks/jQuery/1.11.3/jquery-1.11.3.min.js"></script> 
-  <script src="https://static.scania.com/build/global/3.5.2/js/corporate-ui.js"></script>
+  <script src="https://static.scania.com/build/global/3.4.0/js/corporate-ui.js"></script>
 
 
 
 </head>
-<body class="scania app fullscreen" data-env="">
+<body class="scania app" data-env="">
 
   <c-corporate-header site-name="UX Library" site-url="#">
     <nav-item location="index.popover.html">Support</nav-item>
@@ -25,7 +25,7 @@
 
   <c-main-content class="light">
 
-    <c-main-navigation variation="2">
+    <c-main-navigation>
       <primary-items>
         <nav-item location="index-popover.html" class="active">Home</nav-item>
         <nav-item location="index-popover.html" class="active">Style Guide
@@ -45,9 +45,12 @@
       </primary-items>
     </c-main-navigation>
 
-
     <section>
+
+       
+
       <div class="container">
+        <h1>This is just a prototype for Full Screen handling</h1>
         <h3 id="select_language"></h3>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('sv');">Swedish</button>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('en');">English</button>
@@ -55,16 +58,10 @@
         <button class="btn btn-sm btn-default" onclick="swapLanguage('hi');">Hindi</button>
         <button class="btn btn-sm btn-default" onclick="swapLanguage('ru');">Russian</button>        
         <h4 id="title" class="mt-5"></h4>
-        <button class="btn btn-sm btn-success" id="save-btn"></button>
-        <h5 id="info" class="mt-5"></h5>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-            <h1>This is just a prototype for Full Screen handling</h1>
-      </div>      
-    </section>
+
   </c-main-content>
 
 <c-corporate-footer>
