@@ -3,6 +3,10 @@
 		"save": "Spara {{count}} ändring",
 		"save_plural": "Spara {{count}} ändringar"
 	},
+	"help": {
+		"fullscreen_body": "Du kan öppna kartan i en mer rymlig vy. För att återställa till standard, använd den här knappen.",
+		"fullscreen_title": ""
+	},
 	"label": {
 		"select_language": "Välj språk"
 	}

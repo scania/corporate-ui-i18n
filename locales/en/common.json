@@ -3,6 +3,10 @@
 		"save": "Save {{count}} change",
 		"save_plural": "Save {{count}} changes"
 	},
+	"help": {
+		"fullscreen_body": "You can open the map in a more spacious view. To restore to default, please use this button.",
+		"fullscreen_title": ""
+	},
 	"label": {
 		"select_language": "Select language"
 	}

@@ -3,6 +3,10 @@
 		"save": "Speichere {{count}} änderung",
 		"save_plural": "Speichere {{count}} änderungen"
 	},
+	"help": {
+		"fullscreen_body": "Sie können die Karte in einer größeren Ansicht öffnen. Verwenden Sie diese Schaltfläche, um die Standardeinstellungen wiederherzustellen.",
+		"fullscreen_title": ""
+	},
 	"label": {
 		"select_language": "Sprache auswählen"
 	}
