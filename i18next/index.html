@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html lang="en-GB">
+
+<html lang="en-GB" class="corporate-ui">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
@@ -7,113 +9,235 @@
     <meta http-equiv="refresh" content="0;url=https://static.scania.com/vendors/components/pure-js/nonJS-browsers/1.0.0/nonJS-browsers.html">
   </noscript>
 
-  <title>Corporate UI i18next</title>
+  <title>UX Library - UI Guidelines - Corporate UI</title>
   <script src="https://static.scania.com/vendors/components/pure-js/browser-reject/1.0.0/js/browser-reject.js"></script>
   <script src="https://static.scania.com/vendors/frameworks/jQuery/1.11.3/jquery-1.11.3.min.js"></script> 
-  <script src="https://static.scania.com/build/global/3.5.2/js/corporate-ui.js"></script>
-
-  <script src="https://unpkg.com/i18next/i18next.js"></script>
-  <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>    
-  <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
-
-  <script>
-
-  // import i18next from 'i18next';
-  i18next
-    .use(i18nextXHRBackend)
-    .use(i18nextBrowserLanguageDetector)
-    .init({
-      useLocalStorage:false,
-      useCookie: false,
-      fallbackLng: 'en',
-      debug: true,
-      ns: ['special', 'common'],
-      defaultNS: 'special',
-      backend: {
-        // load from GitHub Corporate UI i18 repo
-        loadPath: 'https://scania.github.io/corporate-ui-i18n/locales/{{lng}}/{{ns}}.json',
-        crossDomain: true
-      }
-    }, function(err, t) {
-      // init set content
-      updateContent();
-    });
+  <script src="https://static.scania.com/build/global/3.4.0/js/corporate-ui.js"></script>
 
 
-  // just set some content and react to language changes
-  // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
-  function updateContent() {
-
-    document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
-    document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
-    document.getElementById('save-btn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
-
-    document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
-  }
-
-  function changeLng(lng) {
-    i18next.changeLanguage(lng);
-  }
-
-  i18next.on('languageChanged', () => {
-    updateContent();
-  });
-
-  </script>
-
-  <style>
-
-  </style>
 
 </head>
-<body class="scania app" data-env="Dev">
+<body class="scania app" data-env="">
 
-  <c-corporate-header site-name="Corporate UI i18n" site-url="/corporate-ui-i18n/">
-    <nav-item location="https://scania.github.io/corporate-ui-docs/developer/support.html">Support</nav-item>
-    <nav-item location="https://github.com/scania/corporate-ui-i18n">GitHub</nav-item>
+  <c-corporate-header site-name="UX Library" site-url="#">
+    <nav-item location="index.popover.html">Support</nav-item>
+    <nav-item location="index.popover.html">GitHub</nav-item>
   </c-corporate-header>
 
-  <c-main-content>
+  <c-main-content class="light">
 
-    <c-main-navigation show-search>
+    <c-main-navigation>
       <primary-items>
-        <nav-item location="https://scania.github.io/corporate-ui-docs/" class="active">Home</nav-item>
-        <nav-item location="https://scania.github.io/corporate-ui-docs/styleguide/">Style Guide
+        <nav-item location="index-popover.html" class="active">Home</nav-item>
+        <nav-item location="index-popover.html" class="active">Style Guide
           <sub-navigation caption="Style Guide">
-            <nav-item location="https://scania.github.io/corporate-ui-docs/logotype/">Logotype</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/icons/">Icons</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/colours/">Colours</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/typography/">Typography</nav-item>
+            <nav-item location="index-popover.html">Logotype</nav-item>
+            <nav-item location="index-popover.html">Icons</nav-item>
+            <nav-item location="index-popover.html">Colours</nav-item>
+            <nav-item location="index-popover.html" class="active">Typography</nav-item>
+            <nav-item class="pull-right">
+              <c-fullscreen data-dismissible="true" data-trigger="focus" data-toggle="popover" id="restore-help" data-title="Restore Navigation <span class='badge badge-success' style='vertical-align: bottom;'>NEW!</span>" data-placement="left" data-content="The map is now opened in a spacious view. To restore to default, please use this button."></c-fullscreen>
+            </nav-item>
           </sub-navigation>
         </nav-item>
-        <nav-item location="https://scania.github.io/corporate-ui-docs/developer/">Web Applications
-          <sub-navigation caption="Web Applications">
-            <nav-item location="https://scania.github.io/corporate-ui-docs/developer/">Corporate UI</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/developer/corporate-ui-for-frameworks.html">JS Frameworks</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/developer/bootstrap-original-docs.html">Scania Bootstrap</nav-item>            
-            <nav-item location="https://scania.github.io/corporate-ui-docs/developer/uiaas.html">UIaaS</nav-item>
-            <nav-item location="https://scania.github.io/corporate-ui-docs/developer/support.html">Support</nav-item>
-          </sub-navigation>
+        <nav-item location="index-popover.html">Web Applications
         </nav-item>
-        <nav-item location="https://scania.github.io/corporate-ui-docs/mobile-apps/">Mobile Apps</nav-item>
+        <nav-item location="index-popover.html">Mobile Apps</nav-item>
       </primary-items>
     </c-main-navigation>
 
     <section>
-      <div class="container">
-        <h3 id="select_language"></h3>
-          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('sv')">Swedish</button>
-          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('en')">English</button>
-          <button class="btn btn-sm btn-default" onclick="i18next.changeLanguage('de')">German</button>
 
+       
+
+      <div class="container">
+        <h1 id="prototype_header"></h1>
+        <h3 id="select_language"></h3>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('sv');">Swedish</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('en');">English</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('de');">German</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('hi');">Hindi</button>
+        <button class="btn btn-sm btn-default" onclick="swapLanguage('ru');">Russian</button>        
         <h4 id="title" class="mt-5"></h4>
-        <button class="btn btn-sm btn-success" id="save-btn"></button>
-        <h5 id="info" class="mt-5"></h5>
       </div>
     </section>
 
-  </c-main-content>
-  <c-corporate-footer></c-corporate-footer>
-</body>
 
+  </c-main-content>
+
+<c-corporate-footer>
+  <c-social-media>
+    <nav-item location="#" icon="facebook"></nav-item>
+    <nav-item location="#" icon="twitter"></nav-item>
+    <nav-item location="#" icon="youtube"></nav-item>
+    <nav-item location="#" icon="linkedin"></nav-item>
+  </c-social-media>
+
+  <nav-item location="#">a link</nav-item>
+  <nav-item location="#">another link</nav-item>
+</c-corporate-footer>
+
+
+<style>
+
+  /*To be added to Corporate UI
+  corporate-ui.css:618*/
+  body.fullscreen c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before, c-fullscreenbody.fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before {
+      content: "\f422";
+      padding: 4px 7px;
+      border-radius: 4px;
+      background-color: #033a6a;
+      color: #fafafa;
+  }
+
+  /* Fullscreen */
+  c-fullscreen {
+    display: inline-block;
+  }
+  c-fullscreen a.c-fullscreen {
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+  c-fullscreen a.c-fullscreen:hover:after {
+    border: 0;
+  }
+  c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen {
+    font-family: "Font Awesome 5 Pro";
+    line-height: 19px;
+    vertical-align: middle;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+  c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before {
+    content: "\f424";
+    padding: 4px 5px;
+    border-radius: 4px;
+    background-color: #033a6a;
+    color: #fafafa;
+  }
+  body.fullscreen c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before,
+  c-fullscreenbody.fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before {
+    content: "\f422";
+    padding: 4px 7px;
+    border-radius: 4px;
+    background-color: #033a6a;
+    color: #fafafa;
+  }
+  c-main-navigation c-fullscreen a.c-fullscreen,
+  c-fullscreenc-main-navigation a.c-fullscreen {
+    padding: 16px 4px 0 15px;
+  }
+  sub-navigation c-fullscreen a.c-fullscreen,
+  c-fullscreensub-navigation a.c-fullscreen {
+    padding: 12px 15px 0 15px;
+  }
+  .app c-fullscreen a.c-fullscreen,
+  c-fullscreen.app a.c-fullscreen {
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+  .app c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen,
+  c-fullscreen.app a.c-fullscreen .icon-fullscreen.c-fullscreen {
+    font-size: 1em;
+  }
+  .app c-fullscreen a.c-fullscreen .icon-fullscreen.c-fullscreen:before,
+  c-fullscreen.app a.c-fullscreen .icon-fullscreen.c-fullscreen:before {
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  sub-navigation c-fullscreen,
+  c-fullscreensub-navigation {
+    margin-right: 8px;
+  }
+
+</style>
+
+
+
+<script>
+
+    var restoreHelpPopover = document.getElementById('restore-help');
+
+    var myRestoreHelpInit = restoreHelpPopover.Popover;
+
+    document.querySelector("c-fullscreen").onmouseover = function() {myRestoreHelpInit.hide();};
+
+    setTimeout(function(){
+
+      myRestoreHelpInit.show();
+
+      setTimeout(function(){
+        myRestoreHelpInit.hide();
+      }, 8000);
+
+    }, 1500);
+
+    setTimeout(function(){
+      document.querySelector(".close").onclick = function() {alert('Once the user click to close the popover, we need to remember not to show it again. Set a cookie.');};
+    }, 7000);
+
+    function swapLanguage(language) {
+      myRestoreHelpInit.hide();
+      i18next.changeLanguage(language);
+      setTimeout(function(){
+        myRestoreHelpInit.show();
+      }, 500);
+      
+    }
+
+</script>
+
+
+<script src="https://unpkg.com/i18next/i18next.js"></script>
+<script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>    
+<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+
+
+<script>
+
+// import i18next from 'i18next';
+i18next
+  .use(i18nextXHRBackend)
+  .use(i18nextBrowserLanguageDetector)
+  .init({
+    useLocalStorage:false,
+    useCookie: false,
+    fallbackLng: 'en',
+    debug: true,
+    ns: ['special', 'common'],
+    defaultNS: 'special',
+    backend: {
+      // load from i18next-gitbook repo
+      loadPath: 'https://scania.github.io/corporate-ui-i18n/locales/{{lng}}/{{ns}}.json',
+      crossDomain: true
+    }
+  }, function(err, t) {
+    // init set content
+    updateContent();
+  });
+
+
+// just set some content and react to language changes
+// could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
+function updateContent() {
+
+  document.getElementById('restore-help').setAttribute('data-title',i18next.t('common:help.fullscreen_title', { what: 'i18next' }));
+  document.getElementById('restore-help').setAttribute('data-content',i18next.t('common:help.fullscreen_body', { what: 'i18next' }));
+  document.getElementById('prototype_header').innerHTML = i18next.t('common:label.prototype_header', { what: 'i18next' });
+  
+  document.getElementById('select_language').innerHTML = i18next.t('common:label.select_language', { what: 'i18next' });
+  document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
+}
+
+function changeLng(lng) {
+  i18next.changeLanguage(lng);
+}
+
+i18next.on('languageChanged', () => {
+  updateContent();
+});
+
+</script>
+
+</body>
 </html>
