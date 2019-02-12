@@ -61,6 +61,18 @@
       </div>
     </section>
 
+    <section>
+      <h3>Order of language detection</h3>
+      <ol>
+        <li>If a query string is provided, language is set from there:<br/>
+          Try this: <code></code></li>
+        <li>If the HTML lang attribute exists, language is taken from there.</li>
+        <li>If the lang attribute is missing, or the translation for the lang attribute is missing, then we check for the Browsers language setting.</li>
+        <li>If none of the above methods works, we read the language from a cookie called <code>corporateLang</code>.</li>
+        <li>Fallback language is English.</li>
+      </ol>  
+
+    </section>
 
   </c-main-content>
 
@@ -202,17 +214,16 @@ i18next
 
   detection: {
       // order and from where user language should be detected
-      order: ['querystring', 'htmlTag', 'navigator', 'path', 'subdomain', 'cookie', 'localStorage'],  
+      order: ['querystring', 'htmlTag', 'navigator', 'path', 'subdomain', 'cookie'],  
 
       // keys or params to lookup language from
       lookupQuerystring: 'lang',
       lookupCookie: 'corporateLang',
-      lookupLocalStorage: 'corporateLang',
       lookupFromPathIndex: 0,
       lookupFromSubdomainIndex: 0,
 
       // cache user language on
-      caches: ['localStorage', 'cookie'],
+      caches: ['cookie'],
       excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)
 
       // optional expire and domain for set cookie
@@ -223,7 +234,7 @@ i18next
       htmlTag: document.documentElement
     },
     useLocalStorage:false,
-    useCookie: false,
+    useCookie: true,
     fallbackLng: 'en',
     debug: true,
     ns: ['special', 'common'],
