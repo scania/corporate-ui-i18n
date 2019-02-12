@@ -23,6 +23,8 @@
     .use(i18nextXHRBackend)
     .use(i18nextBrowserLanguageDetector)
     .init({
+      useLocalStorage:false
+      useCookie: false,
       fallbackLng: 'en',
       debug: true,
       ns: ['special', 'common'],
